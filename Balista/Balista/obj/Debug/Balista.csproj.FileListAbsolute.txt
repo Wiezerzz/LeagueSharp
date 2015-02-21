@@ -1,0 +1,3 @@
+C:\Users\Aurel\AppData\Local\Temporary Projects\Balista\bin\Debug\Balista.exe.config
+C:\Users\Aurel\AppData\Local\Temporary Projects\Balista\obj\Debug\Balista.csprojResolveAssemblyReference.cache
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Debug\Balista.exe.config

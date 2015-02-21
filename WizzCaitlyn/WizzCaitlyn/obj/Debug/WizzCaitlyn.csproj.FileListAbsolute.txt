@@ -1,0 +1,17 @@
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\WizzCaitlyn.exe.config
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\WizzCaitlyn.exe
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\WizzCaitlyn.pdb
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\LeagueSharp.Common.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\LeagueSharp.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\LX-Orbwalker.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\SharpDX.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\SharpDX.Toolkit.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\SharpDX.Toolkit.Graphics.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\clipper_library.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\LeagueSharp.xml
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\SharpDX.Toolkit.xml
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\bin\Release\SharpDX.Toolkit.Graphics.xml
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\obj\Debug\WizzCaitlyn.csprojResolveAssemblyReference.cache
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\obj\Debug\WizzCaitlyn.exe
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\WizzCaitlyn\WizzCaitlyn\obj\Debug\WizzCaitlyn.pdb
