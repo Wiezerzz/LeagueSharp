@@ -43,7 +43,7 @@ namespace Balista
             Menu misc = new Menu("Misc", "misc");
             {
                 misc.AddItem(new MenuItem("minRange", "Min Range to Balista", true).SetValue(new Slider(700, 100, 1400)));
-                misc.AddItem(new MenuItem("maxRange", "Max Range to Balista", true).SetValue(new Slider(1500, 100, 1500)));
+                misc.AddItem(new MenuItem("maxRange", "Max Range to Balista", true).SetValue(new Slider(1400, 100, 1500)));
                 misc.AddItem(new MenuItem("usePackets", "Use Packets").SetValue(false));
             }
 
