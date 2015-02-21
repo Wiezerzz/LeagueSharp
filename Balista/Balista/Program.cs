@@ -32,6 +32,7 @@ namespace Balista
             //Check to see if it is Kalista.
             if (Player.ChampionName != "Kalista") return;
 
+            //Check if you have a Blitzfriend :)
             if(!BlitzInGame()) return;
 
             R = new Spell(SpellSlot.R, 1500f);
@@ -51,7 +52,7 @@ namespace Balista
                 {
                     targetMenu.AddItem(new MenuItem("target"+enem.ChampionName, enem.ChampionName).SetValue(true));
                 }
-        }
+            }
             Menu drawMenu = new Menu("Drawings", "Drawings");
             {
                 drawMenu.AddItem(new MenuItem("minBRange", "Balista Min Range", true).SetValue(new Circle(false, Color.Chartreuse)));
@@ -71,6 +72,7 @@ namespace Balista
 
             Game.OnGameUpdate += Game_OnGameUpdate;
             Drawing.OnDraw += Drawing_OnDraw;
+
             Game.PrintChat("<font color='#FF0000'>Balista</font> loaded! - <font color='#5882FA'>Wiezerzz</font>");
         }
 
