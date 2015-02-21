@@ -20,12 +20,19 @@ namespace Balista
             CustomEvents.Game.OnGameLoad += Game_OnGameLoad;
         }
 
+        private static bool BlitzInGame()
+        {
+            return ObjectManager.Get<Obj_AI_Hero>().Any(h => h.IsAlly && !h.IsMe && h.ChampionName == "Blitzcrank");
+        }
+
         private static void Game_OnGameLoad(EventArgs args)
         {
             Player = ObjectManager.Player;
 
             //Check to see if it is Kalista.
             if (Player.ChampionName != "Kalista") return;
+
+            if(!BlitzInGame()) return;
 
             R = new Spell(SpellSlot.R, 1500f);
             R.SetSkillshot(0.50f, 1500, float.MaxValue, false, SkillshotType.SkillshotCircle);
@@ -35,6 +42,16 @@ namespace Balista
                 menu.AddItem(new MenuItem("useToggle", "Toggle").SetValue(false));
                 menu.AddItem(new MenuItem("useOnComboKey", "Enabled").SetValue(new KeyBind(32, KeyBindType.Press)));
             }
+            Menu targetMenu = new Menu("Target Selector", "Target Selector");
+            {
+                foreach (
+                    Obj_AI_Hero enem in
+                        ObjectManager.Get<Obj_AI_Hero>()
+                            .Where(enem => enem.IsValid && enem.IsEnemy))
+                {
+                    targetMenu.AddItem(new MenuItem("target"+enem.ChampionName, enem.ChampionName).SetValue(true));
+                }
+        }
             Menu drawMenu = new Menu("Drawings", "Drawings");
             {
                 drawMenu.AddItem(new MenuItem("minBRange", "Balista Min Range", true).SetValue(new Circle(false, Color.Chartreuse)));
@@ -47,6 +64,7 @@ namespace Balista
                 misc.AddItem(new MenuItem("usePackets", "Use Packets").SetValue(false));
             }
 
+            menu.AddSubMenu(targetMenu);
             menu.AddSubMenu(drawMenu);
             menu.AddSubMenu(misc);
             menu.AddToMainMenu();
@@ -85,7 +103,7 @@ namespace Balista
                     ObjectManager.Get<Obj_AI_Hero>()
                         .Where(enem => enem.IsValid && enem.IsEnemy && enem.Distance(Player) <= 2450f)) //950f is blitz Q range.
             {
-                if (enem != null)
+                if (enem != null && menu.Item("target" + enem.ChampionName).GetValue<bool>())
                     foreach (BuffInstance buff in enem.Buffs)
                     {
                         if (enem.Buffs != null)
