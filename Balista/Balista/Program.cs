@@ -5,8 +5,6 @@ using LeagueSharp.Common;
 
 using SharpDX;
 using Color = System.Drawing.Color;
-using Menu = LeagueSharp.Common.Menu;
-using MenuItem = LeagueSharp.Common.MenuItem;
 
 namespace Balista
 {

@@ -1,0 +1,12 @@
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\Balista.exe.config
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\Balista.exe
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\Balista.pdb
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\LeagueSharp.Common.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\LeagueSharp.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\SharpDX.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\clipper_library.dll
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\bin\Release\LeagueSharp.xml
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\obj\Debug\Balista.csprojResolveAssemblyReference.cache
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\obj\Debug\Balista.exe
+C:\Users\Aurel\Documents\GitHub\LeagueSharp\Balista\Balista\obj\Debug\Balista.pdb
