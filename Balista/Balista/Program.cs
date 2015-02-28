@@ -120,7 +120,7 @@ namespace Balista
                     {
                         foreach (BuffInstance buff in enem.Buffs)
                         {
-                            if (buff.Name == "rocketgrab2")
+                            if (buff.Name == "rocketgrab2" && buff.IsActive && buff.EndTime - Game.Time > 0)
                             {
                                 if (R.IsReady())
                                 {
