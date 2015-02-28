@@ -114,9 +114,22 @@ namespace Balista
                     ObjectManager.Get<Obj_AI_Hero>()
                         .Where(enem => enem.IsValid && enem.IsEnemy && enem.Distance(Player) <= 2450f)) //950f is blitz Q range.
             {
-                if (menu.Item("target" + enem.ChampionName).GetValue<bool>() && enem.HasBuff("rocketgrab2", true) && R.IsReady())
+                if (menu.Item("target" + enem.ChampionName).GetValue<bool>())
                 {
-                    R.Cast(menu.Item("usePackets").GetValue<bool>());
+                    if (enem.Buffs != null)
+                    {
+                        foreach (BuffInstance buff in enem.Buffs)
+                        {
+                            if (buff.Name == "rocketgrab2")
+                            {
+                                if (R.IsReady())
+                                {
+                                    //Game.PrintChat("Grabbed!");
+                                    R.Cast(menu.Item("usePackets").GetValue<bool>());
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
