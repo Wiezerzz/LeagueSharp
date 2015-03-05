@@ -17,7 +17,7 @@ namespace Balista
          * So if you think one of my assemblies/programs can be improved please contact me. :)
         */
 
-        public static string BalistaVersion = "1.0.03";
+        public static string BalistaVersion = "1.0.04";
         public static Spell R;
         private static Obj_AI_Hero Player;
         public static Menu menu;
@@ -43,8 +43,8 @@ namespace Balista
             //Check if you have a Blitzfriend :)
             if(!BlitzInGame()) return;
 
-            R = new Spell(SpellSlot.R, 1450);
-            R.SetSkillshot(0.50f, 1450, float.MaxValue, false, SkillshotType.SkillshotCircle);
+            R = new Spell(SpellSlot.R, 1500);
+            R.SetSkillshot(0.50f, 1500, float.MaxValue, false, SkillshotType.SkillshotCircle);
 
             menu = new Menu("Balista", "Balista", true);
             {
@@ -114,9 +114,21 @@ namespace Balista
                     ObjectManager.Get<Obj_AI_Hero>()
                         .Where(enem => enem.IsValid && enem.IsEnemy && enem.Distance(Player) <= 2450f)) //950f is blitz Q range.
             {
-                if (menu.Item("target" + enem.ChampionName).GetValue<bool>() && enem.HasBuff("rocketgrab2", true) && R.IsReady())
+                if (menu.Item("target" + enem.ChampionName).GetValue<bool>())
                 {
-                    R.Cast(menu.Item("usePackets").GetValue<bool>());
+                    if (enem.Buffs != null)
+                    {
+                        for (int i = 0; i < enem.Buffs.Count(); i++)
+                        {
+                            if (enem.Buffs[i].Name == "rocketgrab2" && enem.Buffs[i].IsActive && enem.Buffs[i].EndTime - Game.Time > 0)
+                            {
+                                if (R.IsReady())
+                                {
+                                    R.Cast(menu.Item("usePackets").GetValue<bool>());
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
