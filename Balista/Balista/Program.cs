@@ -118,12 +118,22 @@ namespace Balista
                 {
                     if (enem.Buffs != null)
                     {
+<<<<<<< HEAD
                         for (int i = 0; i < enem.Buffs.Count(); i++)
                         {
                             if (enem.Buffs[i].Name == "rocketgrab2" && enem.Buffs[i].IsActive && enem.Buffs[i].EndTime - Game.Time > 0)
                             {
                                 if (R.IsReady())
                                 {
+=======
+                        foreach (BuffInstance buff in enem.Buffs)
+                        {
+                            if (buff.Name == "rocketgrab2" && buff.IsActive && buff.EndTime - Game.Time > 0)
+                            {
+                                if (R.IsReady())
+                                {
+                                    //Game.PrintChat("Grabbed!");
+>>>>>>> origin/master
                                     R.Cast(menu.Item("usePackets").GetValue<bool>());
                                 }
                             }
