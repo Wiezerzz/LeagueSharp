@@ -78,7 +78,7 @@ namespace Balista
             menu.AddSubMenu(misc);
             menu.AddToMainMenu();
 
-            Game.OnGameUpdate += Game_OnGameUpdate;
+            Game.OnUpdate += Game_OnUpdate;
             Drawing.OnDraw += Drawing_OnDraw;
 
             //This is art.. =.='
@@ -92,7 +92,7 @@ namespace Balista
                 Render.Circle.DrawCircle(Player.Position, menu.Item("maxRange", true).GetValue<Slider>().Value, menu.Item("maxBRange", true).GetValue<Circle>().Color, 3);
         }
 
-        private static void Game_OnGameUpdate(EventArgs args)
+        private static void Game_OnUpdate(EventArgs args)
         {
             if (Player.IsDead || !menu.Item("useToggle").GetValue<bool>() &&
                 !menu.Item("useOnComboKey").GetValue<KeyBind>().Active || !R.IsReady()) return;
