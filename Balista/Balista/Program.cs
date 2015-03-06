@@ -69,7 +69,7 @@ namespace Balista
             Menu misc = new Menu("Misc", "misc");
             {
                 misc.AddItem(new MenuItem("minRange", "Min Range to Balista", true).SetValue(new Slider(700, 100, 1449)));
-                misc.AddItem(new MenuItem("maxRange", "Max Range to Balista", true).SetValue(new Slider(1450, 100, 1500)));
+                misc.AddItem(new MenuItem("maxRange", "Max Range to Balista", true).SetValue(new Slider(1500, 100, 1500)));
                 misc.AddItem(new MenuItem("usePackets", "Use Packets").SetValue(false));
             }
 
@@ -78,7 +78,7 @@ namespace Balista
             menu.AddSubMenu(misc);
             menu.AddToMainMenu();
 
-            Game.OnGameUpdate += Game_OnGameUpdate;
+            Game.OnUpdate += Game_OnUpdate;
             Drawing.OnDraw += Drawing_OnDraw;
 
             //This is art.. =.='
@@ -92,7 +92,7 @@ namespace Balista
                 Render.Circle.DrawCircle(Player.Position, menu.Item("maxRange", true).GetValue<Slider>().Value, menu.Item("maxBRange", true).GetValue<Circle>().Color, 3);
         }
 
-        private static void Game_OnGameUpdate(EventArgs args)
+        private static void Game_OnUpdate(EventArgs args)
         {
             if (Player.IsDead || !menu.Item("useToggle").GetValue<bool>() &&
                 !menu.Item("useOnComboKey").GetValue<KeyBind>().Active || !R.IsReady()) return;
@@ -112,15 +112,15 @@ namespace Balista
             foreach (
                 Obj_AI_Hero enem in
                     ObjectManager.Get<Obj_AI_Hero>()
-                        .Where(enem => enem.IsValid && enem.IsEnemy && enem.Distance(Player) <= 2450f)) //950f is blitz Q range.
+                        .Where(enem => enem.IsValid && enem.IsEnemy && enem.Distance(Player) <= 2450f)) //+950f is blitz Q range.
             {
-                if (menu.Item("target" + enem.ChampionName).GetValue<bool>())
+                if (menu.Item("target" + enem.ChampionName).GetValue<bool>() && enem.Health > 200)
                 {
                     if (enem.Buffs != null)
                     {
                         for (int i = 0; i < enem.Buffs.Count(); i++)
                         {
-                            if (enem.Buffs[i].Name == "rocketgrab2" && enem.Buffs[i].IsActive && enem.Buffs[i].EndTime - Game.Time > 0)
+                            if (enem.Buffs[i].Name == "rocketgrab2" && enem.Buffs[i].IsActive)
                             {
                                 if (R.IsReady())
                                 {
