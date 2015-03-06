@@ -17,7 +17,7 @@ namespace Balista
          * So if you think one of my assemblies/programs can be improved please contact me. :)
         */
 
-        public static string BalistaVersion = "1.0.03";
+        public static string BalistaVersion = "1.0.0.4";
         public static Spell R;
         private static Obj_AI_Hero Player;
         public static Menu menu;
