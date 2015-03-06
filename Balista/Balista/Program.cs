@@ -17,7 +17,7 @@ namespace Balista
          * So if you think one of my assemblies/programs can be improved please contact me. :)
         */
 
-        public static string BalistaVersion = "1.0.04";
+        public static string BalistaVersion = "1.0.03";
         public static Spell R;
         private static Obj_AI_Hero Player;
         public static Menu menu;
@@ -78,7 +78,7 @@ namespace Balista
             menu.AddSubMenu(misc);
             menu.AddToMainMenu();
 
-            Game.OnUpdate += Game_OnUpdate;
+            Game.OnGameUpdate += Game_OnGameUpdate;
             Drawing.OnDraw += Drawing_OnDraw;
 
             //This is art.. =.='
@@ -92,7 +92,7 @@ namespace Balista
                 Render.Circle.DrawCircle(Player.Position, menu.Item("maxRange", true).GetValue<Slider>().Value, menu.Item("maxBRange", true).GetValue<Circle>().Color, 3);
         }
 
-        private static void Game_OnUpdate(EventArgs args)
+        private static void Game_OnGameUpdate(EventArgs args)
         {
             if (Player.IsDead || !menu.Item("useToggle").GetValue<bool>() &&
                 !menu.Item("useOnComboKey").GetValue<KeyBind>().Active || !R.IsReady()) return;
@@ -125,6 +125,7 @@ namespace Balista
                                 if (R.IsReady())
                                 {
                                     R.Cast(menu.Item("usePackets").GetValue<bool>());
+									Game.PrintChat("Grabbed!");
                                 }
                             }
                         }
@@ -132,5 +133,6 @@ namespace Balista
                 }
             }
         }
+
     }
 }
