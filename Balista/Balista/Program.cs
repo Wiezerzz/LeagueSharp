@@ -125,7 +125,6 @@ namespace Balista
                                 if (R.IsReady())
                                 {
                                     R.Cast(menu.Item("usePackets").GetValue<bool>());
-									Game.PrintChat("Grabbed!");
                                 }
                             }
                         }
